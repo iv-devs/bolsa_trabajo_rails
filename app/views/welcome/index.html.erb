@@ -1,0 +1,71 @@
+            <div class="section hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="home-title text-center">
+                                <h3>Publicar un trabajo</h3>
+                                <p>Lorem ipsum ipsum ipsum ipsum ipsum ipsum </p>
+                                <%= link_to 'Publicar Trabajo', new_job_url(), class: "btn btn-primary" %>
+
+                            </div>
+                        </div><!-- end col -->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="home-title rightside text-center">
+                                <h3>Soy programador</h3>
+                                <p>Quiero aplicar a alguno de los trabajos publicados en esta pagina</p>
+                                <%= link_to 'Aplicar', '#', class: "btn btn-primary" %>
+                            </div>
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <div class="section lb">
+                <div class="container">
+                    <div class="section-title text-center clearfix">
+                        <h4>Recent & Featured Jobs</h4>
+                        <p class="lead">Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus.</p>
+                    </div>
+
+                    <div class="all-jobs job-listing clearfix">
+                        <div class="job-title hidden-sm hidden-xs"><h5>Últimos Trabajos</h5></div>
+                        <% 10.times do |n| %>
+                            <div class="job-tab">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="post-media">
+                                    <%= link_to (image_tag("job_02.jpg", alt: "logo", title: "Home", class: "img-responsive img-thumbnail")), root_path %>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="badge part-badge">Part Time</div>
+                                    <h3><a href="job-single.html" title="">Hiring Online English Teachers</a></h3>
+                                    <small>
+                                        <span>Publisher : <a href="#">Bob Sturan</a></span> 
+                                        <span>In : <a href="#">Web Design</a></span>
+                                        <span>Date : 14.06.2016</span>
+                                    </small>
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta">
+                                        <p>Antalya</p>
+                                        <small>Turkey</small>
+                                    </div><!-- end meta -->
+                                </div><!-- end col -->
+
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="job-meta text-center">
+                                        <h4>$650/mo</h4>
+                                        <a href="#" class="btn btn-primary btn-sm btn-block">View Job</a>
+                                    </div>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                            </div><!-- end job-tab -->
+                        <% end %>
+                    </div><!-- end alljobs -->
+
+                </div><!-- end container -->
+            </div><!-- end section -->

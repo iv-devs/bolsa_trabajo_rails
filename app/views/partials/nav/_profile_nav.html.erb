@@ -1,0 +1,31 @@
+<% if user_signed_in? %>
+<li class="dropdown yamm-half membermenu hasmenu">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		<%= image_tag("testi_03.png", class: "img-circle") %> <span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu start-right">
+	<li class="dropdown-header">Bienvenido <%= current_user.username %></li>
+
+		<li>
+			<%= link_to user_path(current_user.slug) do %>
+				<span class="glyphicon glyphicon-off"></span> User Dashboard
+			<% end %>
+		</li>
+
+		<li>
+			<%= link_to edit_user_registration_path do %>
+				<span class="glyphicon glyphicon-refresh"></span> Editar Perfil
+			<% end %>
+		</li>
+
+	</ul>
+</li>
+<li>
+	<%= link_to destroy_user_session_path, class: "btn btn-primary", :method => :delete do %>
+		<span class="glyphicon glyphicon-lock"></span> Cerrar Sesión
+	<% end %>
+</li>
+
+<% end %>
+
+

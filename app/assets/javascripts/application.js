@@ -11,6 +11,33 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-wysihtml5
+//= require all
+//= require custom
 //= require_tree .
+
+$(document).on('ready', function(){
+
+	var notificacion = $('.notificacion');
+	function removemosNotificacion(){
+	  notificacion.toggleClass('fadeInLeft fadeOutLeft');
+	}
+
+  $('#job_description, #postulation_professional_profile, #postulation_academic_profile, #postulation_interest').wysihtml5({
+  	'toolbar': {
+  		'font-styles': false,
+  		'blockquote': false, 
+  		'html': false,
+  		'image': false,
+  	}
+  });
+
+  if (notificacion) {
+		setTimeout(removemosNotificacion, 4000);
+  }
+
+});
+
+

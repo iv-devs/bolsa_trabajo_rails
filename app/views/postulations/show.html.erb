@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @postulation.user %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @postulation.job %>
+</p>
+
+<p>
+  <strong>Professional profile:</strong>
+  <%= @postulation.professional_profile %>
+</p>
+
+<p>
+  <strong>Academic profile:</strong>
+  <%= @postulation.academic_profile %>
+</p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @postulation.interest %>
+</p>
+
+<%= link_to 'Edit', edit_job_postulation_path(@job, @postulation) %> |
+<%= link_to 'Back', job_postulations_path(@job) %>

@@ -1,0 +1,13 @@
+<%= simple_form_for([@job, @postulation]), html: { class: "submit-form"} do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :professional_profile %>
+    <%= f.input :academic_profile %>
+    <%= f.input :interest %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

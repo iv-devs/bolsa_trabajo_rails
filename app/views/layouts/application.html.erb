@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JobsIVDevs</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title>JobsIVDevs</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+
+    
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 
   <body>
-  	<% if notice %>
-  		<div class="notice"><%= notice %></div>
-  	<% end %>
-  	<% if alert %>
-    	<div class="alert"><%= alert %></div>
-  	<% end %>
+    <!-- PRELOADER -->
+      <div class="cssload-container">
+          <div class="cssload-loader"></div>
+      </div>
+    <!-- end PRELOADER -->
+    <% if notice %>
+      <div class="notice notificacion animated fadeInLeft"> <i class="fa fa-check"></i> <%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div class="alert notificacion animated fadeInLeft"> <i class="fa fa-ban"></i> <%= alert %></div>
+    <% end %>
+    <div id="wrapper">
+      <%= render 'partials/header' %>
+      <%= yield %>
+      <%= render 'partials/footer' %>
+    </div>
 
-    <%= yield %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

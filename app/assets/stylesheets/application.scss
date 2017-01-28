@@ -1,0 +1,14 @@
+/*
+ *= require font-awesome
+ *= require animate
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
+@import "style";
+@import "responsive";
+@import "colors";
+@import "custom";

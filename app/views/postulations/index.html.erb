@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Postulations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Job</th>
+      <th>Professional profile</th>
+      <th>Academic profile</th>
+      <th>Interest</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @postulations.each do |postulation| %>
+      <tr>
+        <td><%= postulation.user %></td>
+        <td><%= postulation.job %></td>
+        <td><%= postulation.professional_profile %></td>
+        <td><%= postulation.academic_profile %></td>
+        <td><%= postulation.interest %></td>
+        <td><%= link_to 'Show', job_postulation_path(@job, postulation) %></td>
+        <td><%= link_to 'Edit', edit_job_postulation_path(@job, postulation) %></td>
+        <td><%= link_to 'Destroy', job_postulation_path(@job, postulation), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Postulation', new_job_postulation_path(@job) %>

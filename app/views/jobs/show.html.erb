@@ -1,0 +1,38 @@
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+
+<p>
+  <strong>Job type:</strong>
+  <%= @job.job_type %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @job.salary %>
+</p>
+
+<p>
+  <strong>Salary type:</strong>
+  <%= @job.salary_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= sanitize(@job.description, tags: %w(b strong em i li ul)).html_safe %>
+</p>
+
+
+<p>
+  <strong>Publish job:</strong>
+  <%= @job.publish_job %>
+</p>
+
+<p>
+  <strong>Find worker:</strong>
+  <%= @job.find_worker %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
