@@ -25,6 +25,7 @@
 #  fanpage                :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  slug                   :string
 #
 
 class Company < ApplicationRecord
@@ -35,6 +36,5 @@ class Company < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :jobs
-  has_many :postulations
+  has_many :jobs, dependent: :destroy
 end

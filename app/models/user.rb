@@ -21,6 +21,7 @@
 #  description            :text             not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  slug                   :string
 #
 
 class User < ApplicationRecord
@@ -34,4 +35,11 @@ class User < ApplicationRecord
   enum role: [:user, :admin]
 
   has_many :postulations
+
+  #validaciones
+
+  validates :username, :first_name, :last_name, :description, presence: true
+  validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+  validates :username, :first_name, :last_name, length: { in: 3..20 }
+  validates :description, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed" }
 end

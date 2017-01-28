@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170128083702) do
+ActiveRecord::Schema.define(version: 20170128201416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,11 +65,12 @@ ActiveRecord::Schema.define(version: 20170128083702) do
     t.integer  "company_id"
     t.boolean  "publish_job"
     t.boolean  "find_worker"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "location_job"
     t.integer  "category_job"
     t.string   "slug"
+    t.boolean  "salary_negotiable"
     t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
     t.index ["slug"], name: "index_jobs_on_slug", unique: true, using: :btree
   end
@@ -82,8 +83,6 @@ ActiveRecord::Schema.define(version: 20170128083702) do
     t.text     "interest"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.integer  "company_id"
-    t.index ["company_id"], name: "index_postulations_on_company_id", using: :btree
     t.index ["job_id"], name: "index_postulations_on_job_id", using: :btree
     t.index ["user_id"], name: "index_postulations_on_user_id", using: :btree
   end
@@ -114,7 +113,6 @@ ActiveRecord::Schema.define(version: 20170128083702) do
   end
 
   add_foreign_key "jobs", "companies"
-  add_foreign_key "postulations", "companies"
   add_foreign_key "postulations", "jobs"
   add_foreign_key "postulations", "users"
 end

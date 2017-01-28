@@ -3918,6 +3918,9 @@ blockquote {
     z-index: 99;
 
 }
+.alert-danger{
+    color: white;
+}
 .alert{
     background: #c84133;
     border:1px solid #e74c3c;
@@ -3927,6 +3930,30 @@ blockquote {
     background: #255180;
     border:1px solid #337ab7;
 
+}
+
+.checkbox:checked + label {
+  color: red;
+  font-style: normal;
+} 
+
+
+input[type="checkbox"]:checked + label::before{
+    content: "x";
+    color:red;
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    top: 4px;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 /******************************************
     MISC

@@ -1,13 +1,14 @@
-<%= simple_form_for(@job),  html: { class: "submit-form"} do |f| %>
+<%= simple_form_for(@job, html: { class: "submit-form"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :job_type, collection: Job.job_types.keys.to_a %>
-    <%= f.input :category_job, collection: Job.category_jobs.keys.to_a %>
-    <%= f.input :salary_type, collection: Job.salary_types.keys.to_a %>
-    <%= f.input :location_job %>
+    <%= f.input :job_type, collection: Job.job_types.map {|k, v| [k.to_s.humanize, k]}, prompt: "Selecciones Tipo de Trabajo" %>
+    <%= f.input :category_job, collection: Job.category_jobs.map {|k, v| [k.to_s.humanize, k]}, prompt: "Selecciones Categoria" %>
+    <%= f.input :salary_negotiable, :as => :boolean %>
     <%= f.input :salary %>
+    <%= f.input :salary_type, collection: Job.salary_types.map {|k, v| [k.to_s.humanize, k]}, prompt: "Tipo de Salario" %>
+    <%= f.input :location_job %>
     <%= f.input :description %>
     <%= recaptcha_tags %>
   </div>

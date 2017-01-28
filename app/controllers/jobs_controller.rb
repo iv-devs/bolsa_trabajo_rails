@@ -23,7 +23,7 @@ class JobsController < ApplicationController
   # POST /jobs
   def create
     @job = current_company.jobs.new(job_params)
-
+    
     if verify_recaptcha(model: @job) && @job.save
       redirect_to @job, notice: 'Job was successfully created.'
     else
@@ -56,6 +56,6 @@ class JobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params.require(:job).permit(:title, :job_type, :salary, :salary_type, :description, :publish_job, :location_job)
+      params.require(:job).permit(:title, :job_type, :salary, :salary_type, :description, :publish_job, :location_job, :salary_negotiable)
     end
 end
