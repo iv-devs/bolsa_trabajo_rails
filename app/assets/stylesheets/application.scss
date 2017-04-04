@@ -12,3 +12,57 @@
 @import "responsive";
 @import "colors";
 @import "custom";
+
+.form-control {
+    background-color: #f3f6f9;
+    background-image: none;
+    border: 1px solid #eceff2;
+    border-radius: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #656565;
+    display: block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 1.42857;
+    width: 100%;
+}
+.preview-img{
+    overflow: hidden;
+    padding: 4px;
+    display: none;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #f3f6f9 !important;
+    border-color: #eceff2 !important;
+    color: #656565 !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    position: relative;
+}
+#img_prev{
+    border-radius:1000px;
+}
+
+.loginform.submit-form label {
+    padding-left: 0 !important;
+}
+.checkbox label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 5px;
+}
+.submit-form label {
+    color: #18293b;
+}
+
+
+.click_check:after {
+  font-family: 'FontAwesome';
+  content: "\f00c";
+  color: white!important;
+  background: #e74c3c !important;
+  width: 17px!important;
+  height: 22px!important;
+  border-radius:3px;
+}

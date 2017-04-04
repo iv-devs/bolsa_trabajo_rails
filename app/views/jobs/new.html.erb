@@ -1,10 +1,19 @@
-<section class="job_form container">
-  <div class="row">
-<h1>New Job</h1>
 
-<%= render 'form', job: @job %>
 
-<%= link_to 'Back', jobs_path %>
+            
 
-  </div>
+<section class="section lb">
+	
+	<section class="container">
+	  <div class="row">
+	<h1>New Job</h1>
+
+	<section class="post-padding">
+		<%= render 'form', job: @job %>
+	</section>
+
+	<%= link_to 'Back', jobs_path %>
+
+	  </div>
+	</section>
 </section>

@@ -1,25 +1,58 @@
-<h2>Sign up</h2>
+<section class="section lb">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Registro para crear un trabajo</h2>
+        <hr class="invis">
+        <div class="post-padding">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: { input_html: { class: 'submit-form' } }) do |f| %>
+          <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :logo, as: :file %>
-    <%= f.input :website %>
-    <%= f.input :descripction, required: true, autofocus: true %>
-    <%= f.input :country,  priority: [ "Chile" ] %>
-    <%= f.input :tw %>
-    <%= f.input :github %>
-    <%= f.input :fanpage %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+          <div class="form-inputs">
+            <div class="row">
+              <div class="col-md-6">
+                <%= render partial: 'companies/registrations/form_inputs', locals: { f: f } %>
+              </div>
+            </div>
+
+            <hr class="invis">
+
+
+            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+          <% end %>
+
+          <%= render "companies/shared/links" %>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+<script type="text/javascript">
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
-<%= render "companies/shared/links" %>
+      reader.onload = function (e) {
+        $('#img_prev')
+          .attr('src', e.target.result)
+          .width('100%')
+          .height('100%');
+      };
+
+      reader.readAsDataURL(input.files[0]);
+      $('.preview-img').css({
+        display: 'inline-block'
+      });
+    }
+  }
+</script>
+

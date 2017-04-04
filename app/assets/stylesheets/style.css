@@ -632,6 +632,10 @@ h5.color3 {
     background-size: cover;
 }
 
+.para-imagen-job{
+    background: asset-url('fbg.jpg');
+}
+
 .home-title {
     padding: 30px 80px 30px 0;
 }

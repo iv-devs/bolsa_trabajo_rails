@@ -38,6 +38,16 @@ $(document).on('ready', function(){
 		setTimeout(removemosNotificacion, 4000);
   }
 
+  $('input[type="checkbox"]').change(function() {
+    var _valor = this.checked 
+    console.log(_valor);
+    if(this.checked == true) {
+      $(this).closest('label').addClass('click_check')
+    }else{
+      $(this).closest('label').removeClass('click_check')
+    }
+});
+
 });
 
 

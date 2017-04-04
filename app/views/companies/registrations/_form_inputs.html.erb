@@ -1,0 +1,36 @@
+<div class="col-md-6">
+	<label class="control-label">Logo <small>Por favor agregar el logo de la empresa o startup</small></label>
+	<div class="preview-img">
+		<img id="img_prev" class="img-responsive" src="#" alt="your image" />
+	</div>
+	<%= f.input :logo, as: :file, label: false, input_html: {onchange: "readURL(this);"}  %>
+
+	<label class="control-label">Nombre de la empresa o startup <small> este campo es obligatorio (*)</small></label>
+	<%= f.input :name, input_html: {class: 'form-control'}, label: false  %>
+
+	<label class="control-label">Descripción de la empresa o startups<small> este campo es requerido (*)</small></label>
+	<%= f.input :descripction, required: true, label: false %>
+
+	<label class="control-label">País<small> este campo es requerido (*)</small></label>
+	<%= f.input :country, label: false,  priority: [ "Chile" ] %>
+
+	<label class="control-label">Ciudad<small> este campo es requerido (*)</small></label>
+	<%= f.input :city, label: false%>
+</div>
+
+<div class="col-md-6">
+	<label class="control-label"> <i class="fa fa-code"></i> Website <small>Ingrese la pagina de su empresa o startup (opcional)</small></label>
+	<%= f.input :website, input_html: {class: 'form-control'}, label: false %>
+
+	<label class="control-label"> <i class="fa fa-twitter"></i> Twitter <small>Ingrese el twitter de su empresa o startup (opcional)</small></label>
+	<%= f.input :tw, label: false %>
+
+	<label class="control-label"> <i class="fa fa-github"></i> GitHub <small>Ingrese el GitHub de su empresa o startup (opcional)</small></label>
+	<%= f.input :github, label: false %>
+
+	<label class="control-label"> <i class="fa fa-facebook"></i> Facebook <small>Ingrese Fabebook de su empresa o startup (opcional)</small></label>
+	<%= f.input :fanpage, label: false %>
+
+	<label class="control-label"> <i class="fa fa-linkedin"></i> Linkedin <small>Ingrese Linkedin de su empresa o startup (opcional)</small></label>
+	<%= f.input :linkedin, label: false %>
+</div>

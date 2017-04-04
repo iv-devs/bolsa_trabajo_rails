@@ -26,6 +26,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  slug                   :string
+#  linkedin               :string
 #
 
 require 'rails_helper'

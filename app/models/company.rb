@@ -26,6 +26,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  slug                   :string
+#  linkedin               :string
 #
 
 class Company < ApplicationRecord
@@ -33,8 +34,11 @@ class Company < ApplicationRecord
   friendly_id :name, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  mount_uploader :logo, LogoUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs, dependent: :destroy
+
+  validates :name, :country, :descripction, :logo, presence: true
 end

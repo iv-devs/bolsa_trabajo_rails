@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_company!
+  before_action :authenticate_company!, except: [:show]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   def index
