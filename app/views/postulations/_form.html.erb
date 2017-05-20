@@ -2,12 +2,12 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :professional_profile %>
-    <%= f.input :academic_profile %>
-    <%= f.input :interest %>
+    <%= f.input :professional_profile, label: "Cuéntanos sobre tu perfil profesional y experiencia laboral. ¿Qué has logrado?" %>
+    <%= f.input :academic_profile, label: "Cuéntanos sobre tu formación académica, estudios y otros aprendizajes." %>
+    <%= f.input :interest, label: '¿Por qué te interesa este empleo en particular?' %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-actions text-right">
+    <%= f.button :submit, "Enviar Postulación" %>
   </div>
 <% end %>

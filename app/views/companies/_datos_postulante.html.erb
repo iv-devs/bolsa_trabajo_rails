@@ -1,0 +1,20 @@
+	<div class="about-widget clearfix">
+		<div class="widget-title">
+			<h3>Datos del Postulante</h3>
+		</div><!-- end title -->
+	<br>
+<div class="sitemap-widget">
+			<ul>
+				<li>
+					 Nombre: <%= user.first_name %> <%= user.last_name %>
+				</li>
+				<li>
+					 Enviar un correo: <%= mail_to user.email, user.email %>
+				</li>
+				<li>
+ 					<%= user.description %>
+				</li>
+			</ul><!-- end ul -->
+		</div><!-- end education-widget -->
+
+	</div>

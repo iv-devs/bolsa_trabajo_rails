@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def params_user
-  	[:username, :first_name, :last_name, :avatar, :description]
+  	[:username, :first_name, :last_name, :avatar, :description, :fb, :linkedin, :github, :web, :tw]
   end
 
   private

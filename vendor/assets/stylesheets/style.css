@@ -1,35 +1,4 @@
-/******************************************
-    File Name: style.css
-    Template Name: YourJob
-    Created By: PSD Convert HTML Team
-    Envato Profile: http://themeforest.net/user/psdconverthtml
-    Website: https://psdconverthtml.com
-    Version: 1.0
-    Support: support@psdconverthtml.com
-/******************************************
 
-    1. IMPORT FILES
-    2. IMPORT FONTS
-    3. STARTUP
-    4. FONTS
-    5. HEADER
-    6. MEGA MENU
-    7. SECTIONS
-    8. SERVICE BOXES
-    9. PAGES
-    10. SIDEBAR
-    11. CONTACT
-    12. WP CORE
-    13. SUBMIT FORM
-    14. FREELANCER
-    15. SHOP
-    16. JOBS
-    17. TESTIMONIALS
-    18. PRICING
-    19. BLOG
-    20. FOOTER
-    21. SOCIAL
-    22. MISC
 
 /******************************************
     IMPORT FILES
@@ -1094,7 +1063,7 @@ h5.color3 {
     border: 0;
     box-shadow: none;
     border-radius: 0;
-    color: #4b5c6e !important;
+    color: #4b5c6e;
 }
 
 .nav-pills > li.active > a,
@@ -2783,12 +2752,10 @@ input[type="radio"] .styled:checked + label::after {
 
 .table-striped .btn {
     margin: 10px 0 0;
-    width: 26px;
 }
 
 .job-table .btn {
     margin: 0 0;
-    width: 26px;
 }
 
 .job-table h4 {

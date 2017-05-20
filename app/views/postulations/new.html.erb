@@ -1,5 +1,36 @@
-<h1>New Postulation</h1>
+<section class="section lb">
+	
+	<section class="container">
+	  <div class="row">
+		  <div class="col-md-8">
+		  	
+				<section class="post-padding">
+					<div class="about-widget">
+						<div class="widget-title">
+		            <h3>  Estas postulando a  <%= @job.title  %>  </h3>
+								<h6> Empresa: <strong> <%= link_to(@job.company.name.capitalize, company_path(@job.company.slug)) %>   </strong> </h6>
+		            <hr>
+		        </div>                   
+					</div>
 
-<%= render 'form', postulation: @postulation %>
+					<%= render 'form', postulation: @postulation %>
+				</section>
+		  </div>
+		  <div class="col-md-4">
+		  	<section class="post-padding">
+					<%= render 'datos' %>
+		  	</section>
+		  </div>
 
-<%= link_to 'Back', job_postulations_path(@job) %>
+	  </div>
+	</section>
+</section>
+
+
+
+
+
+
+
+
+

@@ -1,17 +1,20 @@
+<p>
+  Para tener un mejor exito en las postulaciones, lea los <a href="#" data-toggle="modal" data-target="#myModal"> siguientes Tips </a> <br>
+  <small> <span class="red"> * </span> <i> Son campos requeridos </i> </small>
+</p>
+
 <%= simple_form_for(@job, html: { class: "submit-form"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :job_type, collection: Job.job_types.map {|k, v| [k.to_s.humanize, k]}, prompt: "Selecciones Tipo de Trabajo" %>
-    <%= f.input :category_job, collection: Job.category_jobs.map {|k, v| [k.to_s.humanize, v]}, prompt: "Selecciones Categoria" %>
-
-    <%= f.input :salary_negotiable, as: :boolean,  input_html: {class: 'styled'} %>
-
-    <%= f.input :salary %>
-    <%= f.input :salary_type, collection: Job.salary_types.map {|k, v| [k.to_s.humanize, k]}, prompt: "Tipo de Salario" %>
-    <%= f.input :location_job %>
-    <%= f.input :description %>
+    <%= f.input :title, label: "Ingrese un titulo descritivo" %>
+    <%= f.input :job_type, label: "Selecciones Tipo de Trabajo", collection: Job.job_types.map {|k, v| [k.to_s.humanize, k]}, prompt: "Selecciones Tipo de Trabajo" %>
+    <%= f.input :category_job, label: "Seleccione Categoría", collection: Job.category_jobs.map {|k, v| [k.to_s.humanize, k]}, prompt: "Selecciones Categoria" %>
+    <%= f.input :salary, label: "Salario" %>
+    <%= f.input :salary_type, label: "Seleccione tipo Salario", collection: Job.salary_types.map {|k, v| [k.to_s.humanize, k]}, prompt: "Tipo de Salario" %>
+    <%= f.input :salary_negotiable, label:"El salario ofrecido es negociable?", as: :boolean,  input_html: {class: 'styled'}, wrapper: :vertical_radio_and_checkboxes %>
+    <%= f.input :location_job, label: "Ingrese la ciudad de donde se tiene que trabajar." %>
+    <%= f.input :description, label: "Sea lo más detallado posible en descripción" %>
     <%= recaptcha_tags %>
   </div>
 
@@ -20,3 +23,38 @@
   </div>
 <% end %>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Tips</h4>
+      </div>
+      <div class="modal-body">
+        <div class="padding">
+          
+          
+          <ul>
+          <li>
+            <strong>Cuidar la redacción de la oferta laboral: </strong>
+            Una oferta de empleo mal redactada puede derivarse en que las candidaturas que se reciban sean de poca calidad, o simplemente que el perfil profesional que ha sido atraído no es el que se busca por la empresa.
+          </li>
+            <li>
+              <strong>Usa palabras clave en el título y en la descripción de la oferta: </strong> 
+              El título de la oferta tiene que resumir con claridad y de forma concisa el puesto de trabajo que se está ofreciendo. Utilizando los keywords que mejor identifiquen el puesto concreto a desempeñar, la sección o departamento donde la vacante está integrada tienes más posibilidades de llegar a las personas correctas. Ejemplo <i> “SEO Junior Marketing Campaña 2016” </i>
+            </li>
+            <li>
+              <strong> Describe la empresa de manera atractiva para el candidato:  </strong> 
+              En este apartado, la clave es ofrecer la información que comunicará mejor con el candidato, no transmitir el mayor número de datos posibles. De forma general, es operativo describir el recorrido de la empresa, los valores que inspiran su funcionamiento, y los objetivos que la compañía se ha marcado para el medio y largo plazo. La imagen que conviene dar al momento de redactar la oferta es la de una empresa ideal para los futuros candidatos, comprometida con la responsabilidad social.
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

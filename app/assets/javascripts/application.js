@@ -38,7 +38,12 @@ $(document).on('ready', function(){
 		setTimeout(removemosNotificacion, 4000);
   }
 
+
+  
+
+
   $('input[type="checkbox"]').change(function() {
+    console.log(this);
     var _valor = this.checked 
     console.log(_valor);
     if(this.checked == true) {

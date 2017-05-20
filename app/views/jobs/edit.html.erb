@@ -1,6 +1,22 @@
-<h1>Editing Job</h1>
+<div class="section lb">
+	<div class="container">
+		<div class="row">
+			<div class="sidebar col-md-4">
+			<%= render 'companies/menu_company' %>
+			</div><!-- end col -->
 
-<%= render 'form', job: @job %>
-
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
+			<div class="content col-md-8">
+				<div class="post-padding">
+					<div class="job-title nocover hidden-sm hidden-xs"><h5>Editar Trabajo</h5></div>
+					<div class="row">
+						<div class="col-md-12">
+							<section class="post-padding">
+								<%= render 'form', job: @job %>
+							</section>
+						</div><!-- end col -->
+					</div><!-- end row -->
+				</div><!-- end post-padding -->
+			</div><!-- end col -->
+		</div><!-- end row -->  
+	</div><!-- end container -->
+</div><!-- end section -->

@@ -1,4 +1,59 @@
-<h1>
-	
-	@company.name
-</h1>
+<div class="section lb">
+    <div class="container">
+        <div class="row">
+            <div class="sidebar col-md-4">
+                <%= render 'menu_company' %>
+            </div><!-- end col -->
+
+            <div class="content col-md-8">
+                <div class="post-padding">
+                    <div class="job-title nocover hidden-sm hidden-xs"><h5>Trabajos publicados</h5></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive job-table">
+                                <table id="mytable" class="table table-bordred table-striped">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Titulo</th>
+                                            <th>N° Postulaciones</th>
+                                            <th>Detalle</th>
+                                            <th></th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <% @company.jobs.each do |j| %>
+                                            <tr>
+                                                <td>
+                                                    <h4> <%= link_to( j.title.capitalize, company_postulations_path(current_company.id, j.id)) %>  <br>
+                                                        <small>Postulado el : <%= j.created_at.strftime(" %d/%m/%Y ") %></small> <small> <%= link_to( j.category_job, "#") %> </small>
+                                                    </h4>
+                                                </td>
+                                                <td><%= j.postulations.count %></td>
+                                                <td>
+                                                    <%= link_to "Ver postulaciones", company_postulations_path(current_company.id, j.id) %>
+                                                </td>
+                                                <td>
+                                                    <%= link_to 'Editar', edit_job_path(j), class:"btn btn-primary" %>
+
+                                                    <%= simple_form_for(j, html: { class: "submit-form"}) do |f|  %>
+                                                        
+                                                        <%= f.input :find_worker, label: 'Encontraste a un desarrollador?', class:"styled", wrapper: :vertical_radio_and_checkboxes %>
+                                                        <%= f.button :submit %>
+                                                    <% end %>
+                                                </td>
+                                            </tr>
+                                        <% end %>
+                                    </tbody>
+
+                                </table>
+                            </div><!-- end table -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end post-padding -->
+            </div><!-- end col -->
+        </div><!-- end row -->  
+    </div><!-- end container -->
+</div><!-- end section -->

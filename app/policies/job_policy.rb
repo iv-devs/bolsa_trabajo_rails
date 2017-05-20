@@ -1,8 +1,8 @@
 class JobPolicy
-	attr_reader :current_company, :job
+	attr_reader :current_user, :job
 
-  def initialize(current_company, job)
-    @current_company = current_company
+  def initialize(current_user, job)
+    @current_user = current_user
     @job = job
   end
 
@@ -10,13 +10,12 @@ class JobPolicy
   		current_user.admin?
   end
 
-  def update?
-  		@current_user.admin? || @current_company == @job.company_id
+  def update? 
+    @job.company.id == @current_company.id
   end
-  
 
   def destroy?
-  		@current_user.admin? || @current_company == @job.company_id
+     @job.company.id
   end
 
 end

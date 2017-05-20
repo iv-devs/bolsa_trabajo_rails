@@ -1,0 +1,46 @@
+<section class="user">
+	<div class="about-widget clearfix">
+		<div class="widget-title">
+			<h3> <%= @current_user.username %> </h3>
+			<hr>
+			<p>
+				Esta postulación será envida a <%= link_to(@job.company.name.capitalize, company_path(@job.company.slug)) %>
+			</p>
+		</div><!-- end title -->
+
+		<div class="sitemap-widget">
+			<ul>
+				<li>
+					<%= @current_user.email %>
+				</li>
+			</ul><!-- end ul -->
+		</div><!-- end education-widget -->
+	</div>
+
+
+	<div class="about-widget clearfix">
+		<div class="widget-title">
+			<h3>Consejos para una buena postulación</h3>
+			<hr>
+		</div><!-- end title -->
+
+			<p>Las postulaciones de calidad son mejor evaluadas y reciben más respuestas de las empresas. Sigue estos sencillos consejos: </p>
+	<br>
+<div class="sitemap-widget">
+			<ul>
+				<li>
+					 Cuida la redacción y la ortografía. Esto tiene un gran impacto en qué tan profesional te ves.
+				</li>
+				<li>
+ 					No copies/pegues texto de tu CV sin editarlo. Tómate un minuto para redactar un texto claro y sencillo.
+				</li>
+				<li>
+ 					Menciona proyectos hechos "por amor al arte" y estudios autodidactas. Lo que haces y aprendes en tu tiempo libre refleja tu motivación y talento.
+				</li>
+			</ul><!-- end ul -->
+		</div><!-- end education-widget -->
+
+	</div>
+
+
+</section>

@@ -32,7 +32,7 @@ class Job < ApplicationRecord
 
 
   validates :title, uniqueness: { scope: :company , message: "Ya publicaste un trabajo con este titulo" }
-  validates :title, :description, :location_job, presence: true 
+  validates :title, :description, :location_job, :category_job, :job_type, presence: true 
  # validates :title, format: { with: /\A[a-zA-Z0-9]+\Z/ }
   validates :description, length: { maximum: 2000, too_long: "%{count} characters is the maximum allowed" }
 
@@ -42,6 +42,7 @@ class Job < ApplicationRecord
   def publish_job_type
     self.publish_job ||= false
   end
+
 
   def find_workers
     self.find_worker ||= false

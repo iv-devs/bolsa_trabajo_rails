@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="sidebar col-md-4">
-                <%= render 'menu_usuario' %>
+                <%= render 'menu_company' %>
             </div><!-- end col -->
 
             <div class="content col-md-8">
                 <div class="post-padding">
-                    <div class="job-title nocover hidden-sm hidden-xs"><h5>Mis postulaciones</h5></div>
+                    <div class="job-title nocover hidden-sm hidden-xs"><h5>Postulantes a <%= @job.title %></h5></div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive job-table">
@@ -15,22 +15,26 @@
 
                                     <thead>
                                         <tr>
-                                            <th>Oferta</th>
-                                            <th>Empresa</th>
-                                            <th>Sueldo Ofrecido</th>
+                                            <th>Nombre del Postulante</th>
+                                            <th>Correo</th>
+                                            <th>Detalle de postulación</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        <% @user.postulations.each do |p| %>
-                                            <tr>
+                                        <% @job.postulations.each do |p| %>
+                                           <tr>
                                                 <td>
-                                                    <h4> <%= link_to( p.job.title.capitalize, "#") %>  <br>
-                                                        <small>Postulado el : <%= p.created_at.strftime(" %d/%m/%Y ") %></small> <small> <%= link_to( p.job.category_job, "#") %> </small>
+                                                    <h4> <%= p.user.first_name %>  <br>
+                                                        <small>Postulo el : <%= p.created_at.strftime(" %d/%m/%Y ") %></small> <small> Nombre de usuario  <%= p.user.username %> </small>
                                                     </h4>
                                                 </td>
-                                                <td><a href="#"><%= link_to( p.job.company.name.capitalize, "#") %></a></td>
-                                                <td>$31.00</td>
+                                                <td><a href="mailto:<%= p.user.email %>"><%= p.user.email %></a></td>
+                                                <td>
+                                                    <%= link_to company_details_path(current_company.id, @job.id, p.id) do %>
+                                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    <% end %>
+                                                </td>
                                             </tr>
                                         <% end %>
                                     </tbody>

@@ -6,7 +6,7 @@
 
           <div class="col-md-10 col-sm-7 col-xs-12">
             <div class="badge freelancer-badge"><%= @job.job_type %></div>
-            <h3><a href="job-single.html" title=""><%= @job.title %></a></h3>
+            <h3><%= @job.title %></h3>
             <small>
               <span>Publicado Por : <a href="#"><%= @job.company.name %></a></span> 
               <span>Categoria : <a href="#"><%= @job.category_job %></a></span>
@@ -17,7 +17,14 @@
 
             <p><%= sanitize(@job.description, tags: %w(b strong em i li ul)).html_safe %></p>
             
-            <%= link_to 'Aplicar al Trabajo', new_job_postulation_url(@job.id), class: "btn btn-primary btn-custom" %>
+            <% if user_signed_in? %>
+              <% if  Postulation.exists?(job_id: @job.id, user_id:current_user.id) %>
+                <%= link_to 'Haz postulado', user_path(current_user.slug), class: "btn btn-primary btn-custom" %>
+              <% elsif   user_signed_in? && !company_signed_in? %>
+                <%= link_to 'Aplicar al Trabajo', new_job_postulation_url(@job.slug), class: "btn btn-primary btn-custom" %>
+              <% end  %>
+            <% end %>
+          
           </div><!-- end col -->
 
           <div class="col-md-2 col-sm-2 col-xs-12">

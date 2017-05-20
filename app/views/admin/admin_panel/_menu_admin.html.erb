@@ -1,0 +1,11 @@
+<div class="post-padding clearfix">
+	<ul class="nav nav-pills nav-stacked">
+		<li> 
+			<%= links('Mis Postulaciones', user_path(current_user.slug)) %> 
+		</li>
+		<li>
+			<%= links('Editar Perfil', edit_user_registration_path) %> 	
+		</li>
+		<li><a href="#"><span class="glyphicon glyphicon-lock"></span>  Logout</a></li>
+	</ul>
+</div><!-- end widget -->

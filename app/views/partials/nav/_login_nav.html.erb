@@ -1,19 +1,23 @@
-<% if user_signed_in? %>
-  <li>
-  	<%= link_to('Salir', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  	<%= link_to('Login Devs', new_user_session_path)  %>  
-  </li>
-<% end %>
+  <% if user_signed_in? && !company_signed_in? %>
+    <li>
+    	<%= link_to('Salir', destroy_user_session_path, :method => :delete) %>        
+    </li>
+  <% else %>
+    <li>
+    	<%= link_to('Login Devs', new_user_session_path)  %>  
+    </li>
+  <% end %>
+  <% if !user_signed_in? && !company_signed_in? %>
+    <li>
+     <%= link_to('Login Empresa', new_company_session_path)  %>  
+    </li>
+  <% end %>
 
-<% if company_signed_in? %>
-	<li>
-  	<%= link_to('Salir', destroy_company_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-	<li>
-  	<%= link_to('Login Empresa', new_company_session_path)  %>  
-  </li>
-<% end %>
+  <% if company_signed_in? && !user_signed_in?%>
+    <li>
+      <%= link_to('Salir', destroy_company_session_path, :method => :delete) %>        
+    </li>
+  <% end %>
+  
+
+  

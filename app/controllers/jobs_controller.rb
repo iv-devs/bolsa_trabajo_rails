@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_company!, except: [:show]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :autorizacion, only: [:edit, :update]
 
   def index
     @jobs = current_company.jobs
@@ -33,9 +34,8 @@ class JobsController < ApplicationController
 
   # PATCH/PUT /jobs/1
   def update
-    authorize @job
     if @job.update(job_params)
-      redirect_to @job, notice: 'Job was successfully updated.'
+      redirect_to company_path(current_company.slug), notice: 'Job was successfully updated.'
     else
       render :edit
     end
@@ -54,8 +54,15 @@ class JobsController < ApplicationController
       @job = Job.friendly.find(params[:id])
     end
 
+    def autorizacion
+      job = Job.friendly.find(params[:id])
+      unless job.company == current_company 
+        redirect_to root_path(), alert: 'No estas autorizado muaajaja.'
+      end
+    end
+
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params.require(:job).permit(:title, :job_type, :salary, :salary_type, :description, :publish_job, :location_job, :salary_negotiable)
+      params.require(:job).permit(:title, :job_type, :salary, :salary_type, :description, :publish_job, :location_job, :salary_negotiable, :category_job, :find_worker)
     end
 end
