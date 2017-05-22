@@ -51,7 +51,7 @@ class JobsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
-      @job = Job.friendly.find(params[:id])
+      @job = Job.includes(:tags).friendly.find(params[:id])
     end
 
     def autorizacion
@@ -63,6 +63,6 @@ class JobsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_params
-      params.require(:job).permit(:title, :job_type, :salary, :salary_type, :description, :publish_job, :location_job, :salary_negotiable, :category_job, :find_worker)
+      params.require(:job).permit(:title, :job_type, :salary, :salary_type, :description, :publish_job, :location_job, :salary_negotiable, :category_job, :find_worker, :tag_ids => [])
     end
 end

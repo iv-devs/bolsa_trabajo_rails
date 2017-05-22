@@ -190,6 +190,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    selectize-rails (0.12.4)
     sendgrid (1.2.4)
       json
     simple_form (3.4.0)
@@ -256,6 +257,7 @@ DEPENDENCIES
   recaptcha
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
+  selectize-rails
   sendgrid
   simple_form
   spring
@@ -265,4 +267,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.13.7
+   1.14.6

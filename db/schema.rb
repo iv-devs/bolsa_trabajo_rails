@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426193156) do
+ActiveRecord::Schema.define(version: 20170520050819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,13 @@ ActiveRecord::Schema.define(version: 20170426193156) do
     t.index ["slug"], name: "index_jobs_on_slug", unique: true, using: :btree
   end
 
+  create_table "jobs_tags", id: false, force: :cascade do |t|
+    t.integer "job_id"
+    t.integer "tag_id"
+    t.index ["job_id"], name: "index_jobs_tags_on_job_id", using: :btree
+    t.index ["tag_id"], name: "index_jobs_tags_on_tag_id", using: :btree
+  end
+
   create_table "postulations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "job_id"
@@ -87,6 +94,12 @@ ActiveRecord::Schema.define(version: 20170426193156) do
     t.datetime "updated_at",           null: false
     t.index ["job_id"], name: "index_postulations_on_job_id", using: :btree
     t.index ["user_id"], name: "index_postulations_on_user_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -25,6 +25,7 @@ class Job < ApplicationRecord
   
   belongs_to :company
   has_many :postulations, dependent: :destroy
+  has_and_belongs_to_many :tags
 
   enum salary_type: [:hrs, :mes]
   enum job_type: [:full_time, :part_time, :freelance, :practica]

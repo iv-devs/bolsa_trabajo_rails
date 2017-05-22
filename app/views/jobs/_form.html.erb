@@ -13,6 +13,9 @@
     <%= f.input :salary, label: "Salario" %>
     <%= f.input :salary_type, label: "Seleccione tipo Salario", collection: Job.salary_types.map {|k, v| [k.to_s.humanize, k]}, prompt: "Tipo de Salario" %>
     <%= f.input :salary_negotiable, label:"El salario ofrecido es negociable?", as: :boolean,  input_html: {class: 'styled'}, wrapper: :vertical_radio_and_checkboxes %>
+  </div>
+  <%= f.input :tag_ids, label: "Ingrese etiquetas", collection: Tag.all.pluck(:name, :id), as: :select, input_html: { multiple: true, class: "selectize"}%>
+  <div class="form-inputs">
     <%= f.input :location_job, label: "Ingrese la ciudad de donde se tiene que trabajar." %>
     <%= f.input :description, label: "Sea lo más detallado posible en descripción" %>
     <%= recaptcha_tags %>

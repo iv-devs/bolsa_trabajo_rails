@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require selectize
 //= require bootstrap-wysihtml5
 //= require all
 //= require custom
