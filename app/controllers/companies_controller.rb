@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
 	end
 
 	def list_user_job_postulation
-		@job = Job.includes(:postulations).find(params[:job_id])
+		@job = Job.includes(:postulations).friendly.find(params[:job_id])
 	end
 
 	def user_postulation_details

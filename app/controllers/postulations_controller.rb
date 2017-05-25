@@ -29,6 +29,8 @@ class PostulationsController < ApplicationController
     @postulation.user_id = current_user.id
 
     if @postulation.save
+      #enviamos correo para informar de postulacion
+      PostulationMailer.notification_postulation(current_user, @job).deliver_later
       redirect_to user_path(current_user.slug), notice: 'Postulation was successfully created.'
     else
       puts @postulation.errors.messages
