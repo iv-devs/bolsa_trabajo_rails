@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 		get '/job/:job_id/:postulation_id', to: 'companies#user_postulation_details', as: :details
 	end
 
+	resources :empresa, only: [:show]
+
   
 	namespace :admin do
 	  get '/', to: 'admin_panel#index'

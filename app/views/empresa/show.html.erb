@@ -1,0 +1,60 @@
+<div class="section lb">
+                <div class="container">
+                    <div class="row">
+                        <div class="content col-md-6">
+                            <div class="post-padding">
+                                <div class="single-content">
+                                    <h4 class="small-title">Sobre <%= @company.name.capitalize %></h4>
+                                    <p class="lead">
+
+                                        <%= @company.descripction %>
+
+                                    </p>
+
+                                </div>
+                            </div><!-- end post-padding -->
+
+                        </div><!-- end col -->  
+
+                        <div class="sidebar col-md-6">
+                            <div class="widget post-padding clearfix">    
+                                <div class="post-padding">
+                                <div class="single-content recentworks">
+                                    <h4 class="small-title">Trabajos de  <%= @company.name.capitalize %> </h4>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive job-table">
+                                                <table id="mytable" class="table table-bordred table-striped">
+
+                                                    <thead>
+                                                        <tr>
+                                                        <th>Oferta Laboral</th>
+                                                        <th>Categoria</th>
+                                                        <th>Sueldo</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <% @company.jobs.each do |j| %>
+                                                            <tr>
+                                                                <td>
+                                                                <h4> <%= link_to j.title, job_path(j.slug)  %> <br>
+                                                                <small>Status : Pending</small>
+                                                                </h4>
+                                                                </td>
+                                                                <td><a href="#">Freelance</a></td>
+                                                                <td>1 days ago</td>
+                                                            </tr>
+                                                        <% end %>
+                                                    </tbody>
+                                                </table>
+                                            </div><!-- end table -->
+                                        </div>
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+                            </div><!-- end post-padding -->
+                            </div><!-- end widget -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->  
+                </div><!-- end container -->
+            </div><!-- end section -->

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	end
 
 	def postulation_detail
-		@postulation = current_user.postulations.find(params[:postulation_id])
+		@postulation = User.friendly.find(current_user).postulations.find(params[:postulation_id])
 	end
 
 end
