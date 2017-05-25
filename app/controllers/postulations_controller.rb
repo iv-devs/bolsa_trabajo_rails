@@ -19,9 +19,6 @@ class PostulationsController < ApplicationController
     @postulation = ultima_postulacion || current_user.postulations.new
   end
 
-  # GET /postulations/1/edit
-  def edit
-  end
 
   # POST /postulations
   def create
@@ -38,20 +35,6 @@ class PostulationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /postulations/1
-  def update
-    if @postulation.update(postulation_params)
-      redirect_to @postulation, notice: 'Postulation was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /postulations/1
-  def destroy
-    @postulation.destroy
-    redirect_to postulations_url, notice: 'Postulation was successfully destroyed.'
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

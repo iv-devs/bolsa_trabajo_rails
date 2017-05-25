@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :companies
   
   resources :jobs do
-  	resources :postulations
+  	resources :postulations, only: [:new, :show, :create, :index]
   end
 
 	resources :users, only: [:show], path: :user
