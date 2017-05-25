@@ -21,7 +21,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'friendly_id', '~> 5.1.0'
 gem "animate-rails"
 gem 'carrierwave', '~> 1.0'
-gem 'sendgrid'
 gem "selectize-rails"
 group :development, :test do
   gem 'byebug', platform: :mri
