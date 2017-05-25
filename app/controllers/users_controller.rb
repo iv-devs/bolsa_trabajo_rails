@@ -5,4 +5,8 @@ class UsersController < ApplicationController
 		authorize @user
 	end
 
+	def postulation_detail
+		@postulation = current_user.postulations.find(params[:postulation_id])
+	end
+
 end

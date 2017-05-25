@@ -25,7 +25,7 @@
                                         <% @user.postulations.each do |p| %>
                                             <tr>
                                                 <td>
-                                                    <h4> <%= link_to( p.job.title.capitalize, "#") %>  <br>
+                                                    <h4> <%= link_to( p.job.title.capitalize, user_postulation_details_path(current_user.id, p.id)) %>  <br>
                                                         <small>Postulado el : <%= p.created_at.strftime(" %d/%m/%Y ") %></small> <small> <%= link_to( p.job.category_job, "#") %> </small>
                                                     </h4>
                                                 </td>

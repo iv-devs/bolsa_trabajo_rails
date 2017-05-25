@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   	resources :postulations, only: [:new, :show, :create, :index]
   end
 
-	resources :users, only: [:show], path: :user
+	resources :users, only: [:show], path: :user do
+		get '/postulation/:postulation_id', to: 'users#postulation_detail', as: :postulation_details
+	end
 	
 	resources :companies, only: [:show], path: :company do
 		get '/job/:job_id', to: 'companies#list_user_job_postulation', as: :postulations

@@ -1,0 +1,17 @@
+	<div class="about-widget clearfix">
+		<div class="widget-title">
+			<h3>Datos de la Empresa</h3>
+		</div><!-- end title -->
+	<br>
+<div class="sitemap-widget">
+			<ul>
+				<li>
+					 Empresa: <%= company.name %>
+				</li>
+				<li>
+ 					Descripción: <%= sanitize(company.descripction, tags: %w(b strong em i li ul)).html_safe  %>
+				</li>
+			</ul><!-- end ul -->
+		</div><!-- end education-widget -->
+
+	</div>
