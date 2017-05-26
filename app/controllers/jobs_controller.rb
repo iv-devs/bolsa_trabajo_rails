@@ -26,6 +26,8 @@ class JobsController < ApplicationController
     @job = current_company.jobs.new(job_params)
     
     if verify_recaptcha(model: @job) && @job.save
+      #enviar correo de creacion de trabajo
+      
       redirect_to @job, notice: 'Job was successfully created.'
     else
       render :new

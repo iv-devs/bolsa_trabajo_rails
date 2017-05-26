@@ -1,12 +1,4 @@
-/******************************************
-    File Name: colors.css
-    Template Name: YourJob
-    Created By: PSD Convert HTML Team
-    Envato Profile: http://themeforest.net/user/psdconverthtml
-    Website: https://psdconverthtml.com
-    Version: 1.0
-    Support: support@psdconverthtml.com
-/******************************************/
+
 
 /******************************************
     COLORS
@@ -26,7 +18,7 @@
 .whoweare hr,
 .service-list i,
 .content-title hr {
-    border-color: #c84133 !important;
+    border-color: #337ab7 !important;
 }
 
 .service-list i,
@@ -44,8 +36,8 @@
 .part-badge,
 .btn-primary {
     color: #ffffff !important;
-    background-color: #e74c3c !important;
-    border-color: #c84133 !important;
+    background-color: #00b0d4 !important;
+    border-color: #337ab7 !important;
 }
 
 .tags a:hover,
@@ -54,8 +46,8 @@
 .btn-primary:hover,
 .btn-primary:focus {
     color: #ffffff !important;
-    background-color: #c84133 !important;
-    border-color: #e74c3c !important;
+    background-color: #337ab7 !important;
+    border-color: #00b0d4 !important;
 }
 
 .customform i,
@@ -79,11 +71,11 @@
 a:hover,
 a:focus,
 .color {
-    color: #e74c3c !important;
+    color: #00b0d4 !important;
 }
 
 .job-title {
-    border-top-color: #e74c3c !important;
+    border-top-color: #00b0d4 !important;
 }
 
 
@@ -134,16 +126,16 @@ a:focus,
 .btn-custom {
     margin-top: 20px;
     background-color: transparent !important;
-    border: 2px solid #e74c3c;
-    color: #e74c3c !important;
+    border: 2px solid #00b0d4;
+    color: #00b0d4 !important;
     padding: 10px 30px;
 }
 
 .btn-custom:hover,
 .btn-custom:focus {
     background-color: transparent !important;
-    border: 2px solid #c84133;
-    color: #c84133 !important;
+    border: 2px solid #337ab7;
+    color: #337ab7 !important;
     padding: 10px 30px;
 }
 

@@ -29,7 +29,7 @@ class Job < ApplicationRecord
 
   enum salary_type: [:hrs, :mes]
   enum job_type: [:full_time, :part_time, :freelance, :practica]
-  enum category_job: [:diseno_ux, :programacion, :marketing, :desarrollo_movil, :social_media, :sys_admin]
+  enum category_job: [:diseño_ux, :programación, :marketing, :desarrollo_movil, :social_media, :sys_admin]
 
 
   validates :title, uniqueness: { scope: :company , message: "Ya publicaste un trabajo con este titulo" }

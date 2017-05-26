@@ -2,51 +2,33 @@
             <div class="section lb">
                 <div class="container">
                     <div class="section-title text-center clearfix">
-                        <h4>Recent & Featured Jobs</h4>
-                        <p class="lead">Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam nulla mauris iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus.</p>
+                        <h4>Bienvenidos a <%= image_tag("logo-bienvenida.png") %> </h4>
+                        <p class="lead">
+                            Primera bolsa de trabajo especializada en el área de inovacion y tecnología.
+                        </p>
+
                     </div>
+                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="widget post-padding clearfix">
+                                <div class="widget-title">
+                                    <h4>Categorías de Trabajo</h4>
+                                </div><!-- end widget-title -->
 
-                    <div class="all-jobs job-listing clearfix">
-                        <div class="job-title hidden-sm hidden-xs"><h5>Últimos Trabajos</h5></div>
-                        <% @jobs.each do |job| %>
-
-                            <div class="job-tab">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <div class="post-media">
-                                    <%= link_to (image_tag("job_02.jpg", alt: "logo", title: "Home", class: "img-responsive img-thumbnail")), root_path %>
-                                    </div><!-- end media -->
-                                </div><!-- end col -->
-
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="badge part-badge"><%= job.job_type.to_s.humanize %></div>
-                                    <h3>
-                                        <%= link_to job.title, job_url(job) %>
-                                    </h3>
-                                    <small>
-                                        <span>Publicado por : <a href="#"> <%= link_to job.company.name, company_url(job.company) %> </a></span> 
-                                        <span>Publicado Hace : <a href="#"> <%= distance_of_time_in_words( Time.now, job.updated_at) %> </a> </span>
-                                    </small>
-                                </div><!-- end col -->
-
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <div class="job-meta">
-                                        <p><%= job.location_job %></p>
-                                        <small><%= job.category_job %></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end col -->
-
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <div class="job-meta text-center">
-                                        <h4>$650/mo</h4>
-                                        <%= link_to "Ver Trabajo", job_url(job), class: "btn btn-primary btn-sm btn-block" %>
-                                    </div>
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-                            </div><!-- end job-tab -->
-
-                        <% end %>
-                    </div><!-- end alljobs -->
+                                <div class="link-widget">   
+                                    <%= render 'partials/nav/sidebar_menu' %>
+                                </div><!-- end link-widget -->
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                                <% Job.category_jobs.map do |k, v|  %>
+                                    <div class="all-jobs job-listing clearfix">
+                                        <%= render  partial: "welcome/each_jobs", locals: {cat_job: k, jobs: @jobs}   %>
+                                    </div><!-- end alljobs -->
+                                <% end %>                                
+                        </div>
+                    </div>
 
                 </div><!-- end container -->
             </div><!-- end section -->

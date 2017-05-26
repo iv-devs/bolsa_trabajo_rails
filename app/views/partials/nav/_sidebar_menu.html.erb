@@ -1,0 +1,7 @@
+<ul class="verification-list">
+    <% Job.category_jobs.map do |k, v|  %>
+        <li class="done">
+            <%= link_to k.to_s.humanize, "#"  %>
+        </li>
+    <% end %>
+</ul><!-- end check -->

@@ -19,7 +19,7 @@ class Admin::AdminPanelController < ApplicationController
 		#aceptamos los trabajos
 	end
 
-	def delete_job
+	def reject_job
 		#eliminamos el trabajo y damos una notificacion
 	end
 	
